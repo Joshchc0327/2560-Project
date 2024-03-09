@@ -1,0 +1,128 @@
+/* styles.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col {
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 1; /* This will make each .col grow equally */
+  max-width: 100%; /* You can change this for different column sizes */
+}
+
+#data-container {
+  display: flex;
+  flex-direction: column; /* This will stack items vertically */
+  align-items: center; /* This will center them horizontally */
+  padding: 20px;
+}
+
+
+.data-item {
+  background-color: #ffffff;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 0 0 calc(20% - 40px);
+  /* Sets the basis for each item, subtracting the total padding */
+  margin-bottom: 20px;
+  /* Space between rows */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.data-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.data-item h2 {
+  font-size: 1rem;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.data-item p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Additional styles to center the form */
+#add-data-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px; /* Adjust as necessary for spacing */
+}
+
+#add-data-form input,
+#add-data-form button {
+  margin: 5px; /* Spacing between form elements */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .data-item {
+    flex: 0 0 calc(25% - 40px);
+  }
+}
+
+@media (max-width: 900px) {
+  .data-item {
+    flex: 0 0 calc(33.333% - 40px);
+  }
+}
+
+@media (max-width: 600px) {
+  .data-item {
+    flex: 0 0 calc(50% - 40px);
+  }
+}
+
+@media (max-width: 400px) {
+  .data-item {
+    flex: 0 0 100%;
+  }
+}
+
+
+/* You may want to define specific widths for your columns at different breakpoints */
+@media (min-width: 768px) { /* For medium screens and up */
+  .col-md {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  #add-data-form {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 992px) { /* For large screens and up */
+  .col-lg {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
